@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>WebMIDI SysEx Tool</title>
+
+		<script src="external/jquery-3.2.1.min.js"></script>
+		<script src="external/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+		<script src="external/webmidi/src/webmidi.js"></script>
+		<script src="main.js"></script>
+		
+		<link href="external/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="external/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+		<link href="main.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>WebMIDI SysEx Tool</h1>
+
+			<div class="alert alert-danger hidden not-supported" role="alert">
+				<p>
+					<span class="glyphicon glyphicon-thumbs-down"></span>
+					<b>I'm sorry!</b>
+					In order to use this tool you have to allow MIDI access through your web browser.</p>
+				<p>If your web browser does not support the Web MIDI API, try using Chrome or Opera.</p>
+			</div>
+
+			<div class="alert alert-info" role="alert">
+				<span class="glyphicon glyphicon-info-sign"></span>
+				<span> Select your MIDI ports and dump some SysEx. The data and a visualization will appear below.</span>
+			</div>
+
+			<div class="row app">
+				<div class="col-sm-4 offset-sm-1">
+					<div class="form-group">
+						<label for="inputs_select">MIDI Input</label>
+						<select class="form-control" id="inputs_select">
+							<option value="null">None</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-sm-4 offset-sm-1">
+					<div class="form-group">
+						<label for="outputs_select">MIDI Output</label>
+						<select class="form-control" id="outputs_select">
+							<option value="null">None</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-sm-12 data">
+					<div class="form-group">
+						<label for="manufacturer">Manufacturer</label>
+						<input id="manufacturer" class="form-control"readonly="true" />
+					</div>
+					
+					<div class="form-group">
+						<label for="sysex_dump">Received Data</label>
+						<div class="row">
+							<div class="col-sm-8">
+								<textarea id="sysex_dump" class="form-control" rows="10" readonly="true"></textarea>
+							</div>
+							<div class="col-sm-4">
+								<div id="sysex_visual"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12">
+					<div class="form-group">
+						<button id="btn_send" class="btn btn-primary" disabled="true">
+							<span class="glyphicon glyphicon-import"></span>
+							send
+						</button>
+
+						<button id="btn_clear" class="btn btn-default pull-right" disabled="true">
+							<span class="glyphicon glyphicon-remove"></span>
+							clear
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
