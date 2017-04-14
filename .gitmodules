@@ -1,0 +1,3 @@
+[submodule "external/webmidi"]
+	path = external/webmidi
+	url = https://github.com/cotejp/webmidi.git
