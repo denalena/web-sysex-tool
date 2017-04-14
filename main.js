@@ -67,7 +67,7 @@ $(document).ready(function() {
 		
 		sysex = null;
 		
-		btn_send.attr("disabled", "true");
+		btn_clear.attr("disabled", "true");
 		updateSendButton();
 	}
 
